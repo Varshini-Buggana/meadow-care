@@ -1,4 +1,4 @@
-export type Language = 'en' | 'hi' | 'ta';
+export type Language = 'en' | 'hi' | 'te';
 
 export interface Translations {
   appName: string;
@@ -6,6 +6,7 @@ export interface Translations {
   offlineReady: string;
   online: string;
   offline: string;
+  offlineModeEnabled: string;
   dashboard: string;
   symptomChecker: string;
   patientRecords: string;
@@ -46,11 +47,16 @@ export interface Translations {
   bloodType: string;
   allergies: string;
   conditions: string;
+  symptoms: string;
   save: string;
   cancel: string;
+  delete: string;
   emergencyContacts: string;
   firstAidGuide: string;
   nearbyFacilities: string;
+  kioskMode: string;
+  home: string;
+  check: string;
 }
 
 export const translations: Record<Language, Translations> = {
@@ -60,9 +66,10 @@ export const translations: Record<Language, Translations> = {
     offlineReady: 'Offline Ready',
     online: 'Online',
     offline: 'Offline',
+    offlineModeEnabled: 'Offline Mode Enabled',
     dashboard: 'Dashboard',
     symptomChecker: 'Symptom Checker',
-    patientRecords: 'Patient Records',
+    patientRecords: 'Health Records',
     emergency: 'Emergency',
     settings: 'Settings',
     selectLanguage: 'Select Language',
@@ -100,11 +107,16 @@ export const translations: Record<Language, Translations> = {
     bloodType: 'Blood Type',
     allergies: 'Allergies',
     conditions: 'Medical Conditions',
+    symptoms: 'Symptoms',
     save: 'Save',
     cancel: 'Cancel',
+    delete: 'Delete',
     emergencyContacts: 'Emergency Contacts',
     firstAidGuide: 'First Aid Guide',
     nearbyFacilities: 'Nearby Facilities',
+    kioskMode: 'Kiosk Mode',
+    home: 'Home',
+    check: 'Check',
   },
   hi: {
     appName: 'मेडरिले',
@@ -112,9 +124,10 @@ export const translations: Record<Language, Translations> = {
     offlineReady: 'ऑफलाइन तैयार',
     online: 'ऑनलाइन',
     offline: 'ऑफलाइन',
+    offlineModeEnabled: 'ऑफलाइन मोड सक्षम',
     dashboard: 'डैशबोर्ड',
     symptomChecker: 'लक्षण जाँच',
-    patientRecords: 'मरीज़ के रिकॉर्ड',
+    patientRecords: 'स्वास्थ्य रिकॉर्ड',
     emergency: 'आपातकाल',
     settings: 'सेटिंग्स',
     selectLanguage: 'भाषा चुनें',
@@ -152,62 +165,73 @@ export const translations: Record<Language, Translations> = {
     bloodType: 'रक्त प्रकार',
     allergies: 'एलर्जी',
     conditions: 'चिकित्सा स्थितियाँ',
+    symptoms: 'लक्षण',
     save: 'सहेजें',
     cancel: 'रद्द करें',
+    delete: 'हटाएं',
     emergencyContacts: 'आपातकालीन संपर्क',
     firstAidGuide: 'प्राथमिक चिकित्सा गाइड',
     nearbyFacilities: 'नज़दीकी सुविधाएँ',
+    kioskMode: 'कियोस्क मोड',
+    home: 'होम',
+    check: 'जाँचें',
   },
-  ta: {
-    appName: 'மெட்ரிலே',
-    tagline: 'ஆஃப்லைனில் செயல்படும் சுகாதாரம்',
-    offlineReady: 'ஆஃப்லைன் தயார்',
-    online: 'ஆன்லைன்',
-    offline: 'ஆஃப்லைன்',
-    dashboard: 'டாஷ்போர்டு',
-    symptomChecker: 'அறிகுறி சரிபார்ப்பு',
-    patientRecords: 'நோயாளி பதிவுகள்',
-    emergency: 'அவசரநிலை',
-    settings: 'அமைப்புகள்',
-    selectLanguage: 'மொழியைத் தேர்ந்தெடுக்கவும்',
-    checkSymptoms: 'அறிகுறிகளை சரிபார்க்கவும்',
-    viewRecords: 'பதிவுகளைப் பார்க்கவும்',
-    emergencyHelp: 'அவசர உதவி',
-    quickActions: 'விரைவு செயல்கள்',
-    recentActivity: 'சமீபத்திய செயல்பாடு',
-    lastSync: 'கடைசி ஒத்திசைவு',
-    neverSynced: 'ஒத்திசைக்கப்படவில்லை',
-    syncNow: 'இப்போது ஒத்திசைக்கவும்',
-    syncing: 'ஒத்திசைக்கிறது...',
-    symptomAssessment: 'அறிகுறி மதிப்பீடு',
-    selectSymptoms: 'உங்கள் அறிகுறிகளைத் தேர்ந்தெடுக்கவும்',
-    howAreYouFeeling: 'இன்று நீங்கள் எப்படி உணர்கிறீர்கள்?',
-    assessRisk: 'ஆபத்தை மதிப்பிடுங்கள்',
-    riskLevel: 'ஆபத்து நிலை',
-    low: 'குறைவு',
-    medium: 'நடுத்தர',
-    high: 'அதிக',
-    critical: 'மிகவும் தீவிரம்',
-    guidance: 'வழிகாட்டுதல்',
-    startOver: 'மீண்டும் தொடங்கு',
-    callEmergency: 'அவசர அழைப்பு',
-    back: 'பின்',
-    next: 'அடுத்து',
-    noRecords: 'நோயாளி பதிவுகள் இல்லை',
-    addPatient: 'நோயாளியைச் சேர்க்கவும்',
-    name: 'பெயர்',
-    age: 'வயது',
-    gender: 'பாலினம்',
-    male: 'ஆண்',
-    female: 'பெண்',
-    other: 'மற்றவை',
-    bloodType: 'இரத்த வகை',
-    allergies: 'ஒவ்வாமைகள்',
-    conditions: 'மருத்துவ நிலைமைகள்',
-    save: 'சேமி',
-    cancel: 'ரத்து செய்',
-    emergencyContacts: 'அவசர தொடர்புகள்',
-    firstAidGuide: 'முதலுதவி வழிகாட்டி',
-    nearbyFacilities: 'அருகிலுள்ள வசதிகள்',
+  te: {
+    appName: 'మెడ్‌రిలే',
+    tagline: 'ఆఫ్‌లైన్‌లో పనిచేసే ఆరోగ్య సంరక్షణ',
+    offlineReady: 'ఆఫ్‌లైన్ సిద్ధం',
+    online: 'ఆన్‌లైన్',
+    offline: 'ఆఫ్‌లైన్',
+    offlineModeEnabled: 'ఆఫ్‌లైన్ మోడ్ ఎనేబుల్ అయింది',
+    dashboard: 'డాష్‌బోర్డ్',
+    symptomChecker: 'లక్షణాల పరీక్ష',
+    patientRecords: 'ఆరోగ్య రికార్డులు',
+    emergency: 'అత్యవసరం',
+    settings: 'సెట్టింగ్‌లు',
+    selectLanguage: 'భాషను ఎంచుకోండి',
+    checkSymptoms: 'లక్షణాలను తనిఖీ చేయండి',
+    viewRecords: 'రికార్డులను చూడండి',
+    emergencyHelp: 'అత్యవసర సహాయం',
+    quickActions: 'త్వరిత చర్యలు',
+    recentActivity: 'ఇటీవలి కార్యకలాపం',
+    lastSync: 'చివరి సింక్',
+    neverSynced: 'ఎప్పుడూ సింక్ చేయలేదు',
+    syncNow: 'ఇప్పుడు సింక్ చేయండి',
+    syncing: 'సింక్ అవుతోంది...',
+    symptomAssessment: 'లక్షణాల అంచనా',
+    selectSymptoms: 'మీ లక్షణాలను ఎంచుకోండి',
+    howAreYouFeeling: 'ఈ రోజు మీకు ఎలా అనిపిస్తోంది?',
+    assessRisk: 'ప్రమాదాన్ని అంచనా వేయండి',
+    riskLevel: 'ప్రమాద స్థాయి',
+    low: 'తక్కువ',
+    medium: 'మధ్యస్థం',
+    high: 'ఎక్కువ',
+    critical: 'క్లిష్టమైన',
+    guidance: 'మార్గదర్శకత్వం',
+    startOver: 'మళ్ళీ ప్రారంభించండి',
+    callEmergency: 'అత్యవసర కాల్',
+    back: 'వెనక్కి',
+    next: 'తదుపరి',
+    noRecords: 'రోగి రికార్డులు కనుగొనబడలేదు',
+    addPatient: 'రోగిని జోడించండి',
+    name: 'పేరు',
+    age: 'వయస్సు',
+    gender: 'లింగం',
+    male: 'పురుషుడు',
+    female: 'స్త్రీ',
+    other: 'ఇతర',
+    bloodType: 'రక్త రకం',
+    allergies: 'అలర్జీలు',
+    conditions: 'వైద్య పరిస్థితులు',
+    symptoms: 'లక్షణాలు',
+    save: 'సేవ్',
+    cancel: 'రద్దు',
+    delete: 'తొలగించు',
+    emergencyContacts: 'అత్యవసర సంప్రదింపులు',
+    firstAidGuide: 'ప్రథమ చికిత్స గైడ్',
+    nearbyFacilities: 'సమీపంలోని సౌకర్యాలు',
+    kioskMode: 'కియోస్క్ మోడ్',
+    home: 'హోమ్',
+    check: 'తనిఖీ చేయండి',
   },
 };
